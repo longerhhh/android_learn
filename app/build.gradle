@@ -1,0 +1,330 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+//    id 'com.google.devtools.ksp'
+//    kotlin("jvm")
+//    id 'dagger.hilt.android.plugin'
+}
+//apply plugin: 'kotlin-android'
+
+// Old version of gradle plugin (< 2.2), You can use apt plugin, look at 'Other#1'
+// Kotlin configuration reference 'Other#2'
+android {
+    compileSdk 31
+
+    signingConfigs {
+        release {
+            storeFile file("$rootDir/app/src/release/keyStore/androiKeyAlias.jks")
+//            storeFile file(rootDir+'/app/src/release/keyStore/androiKeyAlias.jks')
+            keyAlias 'endl'
+            keyPassword 'Sbll99'
+            storePassword 'Sbll99'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 26
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //minifyEnabled true
+            //shrinkResources true    //自动清理无用资源
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += "META-INF/AL2.0"
+            excludes += "META-INF/LGPL2.1"
+//            excludes += "META-INF/AL2.0"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+        compose true
+    }
+}
+
+dependencies {
+    compileOnly("com.google.devtools.ksp:symbol-processing-api:1.6.10-1.0.2")
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.39.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
+//    implementation "androidx.paging:paging-rxjava3:3.0.1"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2"
+    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
+    implementation "io.reactivex.rxjava3:rxjava:3.1.2"
+
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.fragment:fragment:1.4.1'
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+//    implementation 'androidx.navigation:navigation-safe-args-gradle-plugin:2.3.5'
+    implementation 'androidx.paging:paging-common-ktx:3.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.room:room-common:2.3.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    implementation 'com.blankj:utilcodex:1.30.6'
+
+    implementation "com.github.liangjingkanji:StatusBar:2.0.1"
+    implementation 'androidx.exifinterface:exifinterface:1.3.3'
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'cn.carbswang.android:NumberPickerView:1.2.0'
+//    implementation 'com.aliyun.rtc:AliRTC-Full:1.17.38.2101092'
+    implementation 'com.contrarywind:Android-PickerView:4.1.9'
+    implementation 'com.contrarywind:wheelview:4.1.0'
+
+    // 涂鸦
+    implementation 'com.github.1993hzw:Doodle:5.5.3'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+    implementation 'com.github.liangjingkanji:BRV:1.3.36' // 列表
+    implementation 'com.github.liangjingkanji:Channel:1.1.4' // 事件分发
+    implementation 'com.github.liangjingkanji:debugkit:1.2.11' // 调试工具
+    implementation 'com.github.liangjingkanji:Engine:0.0.25'
+    implementation 'com.github.liangjingkanji:FlycoTabLayout:2.0.3' // 标签栏
+    implementation 'com.github.liangjingkanji:LogCat:1.1.0' // 日志工具
+    implementation 'com.github.liangjingkanji:Net:3.0.24' // 网络请求.异步任务
+//    implementation 'com.github.liangjingkanji:Serialize:1.2.2' // 序列化数据存储
+    implementation 'com.github.liangjingkanji:Tooltip:1.1.3' // 吐司
+    implementation 'com.github.weidongjian:androidWheelView:1.0.0'
+
+//    api 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+//    api 'io.github.scwang90:refresh-header-material:2.0.5'
+//    api 'io.github.scwang90:refresh-footer-classics:2.0.5'
+    implementation 'com.github.mmin18:realtimeblurview:1.2.1'
+
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:23.0.2'
+
+    implementation 'com.king.zxing:zxing-lite:2.0.3'
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    implementation 'com.tencent:mmkv:1.2.10'
+
+    implementation 'jp.wasabeef:blurry:4.0.0'
+    implementation 'io.alterac.blurkit:blurkit:1.1.1'
+
+    implementation 'com.google.dagger:hilt-android:2.39.1'
+    implementation fileTree(dir: 'libs', include: ['.jar', '.aar'])
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
+//    ksp 'com.github.bumptech.glide:compiler:4.12.0'
+//    ksp 'com.google.dagger:hilt-compiler:2.39.1'
+//    kspAndroidTest 'com.google.dagger:hilt-compiler:2.39.1'
+//    kspTest 'com.google.dagger:hilt-compiler:2.39.1'
+    testImplementation 'com.google.dagger:hilt-android-testing:2.39.1'
+    testImplementation 'junit:junit:4.13.2'
+
+//    implementation 'androidx.core:core-ktx:1.3.2'
+//    implementation 'androidx.appcompat:appcompat:1.2.0'
+//    implementation 'com.google.android.material:material:1.3.0'
+//    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+//    testImplementation 'junit:junit:4.+'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+//    implementation 'androidx.hilt:.navigation.fragment:navigation-fragment:1.0.0'
+    implementation('androidx.hilt:hilt-navigation-fragment:1.0.0')
+//    implementation('androidx.hilt:hilt-navigation-compose:1.0.0')
+//    implementation('androidx.hilt:hilt-navigation:1.0.0')
+
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:2.4.1"
+    implementation "androidx.navigation:navigation-ui:2.4.1"
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
+
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:2.4.1"
+
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:2.4.1"
+
+    // Jetpack Compose Integration
+    implementation "androidx.navigation:navigation-compose:2.4.1"
+
+//    implementation(project(":pmannotionhandler"))
+//    implementation 'com.arialyy.aria:core:3.8.12'
+//    ksp 'com.arialyy.aria:compiler:3.8.12'
+//    implementation 'com.arialyy.aria:ftpComponent:3.8.12' //# 如果需要使用ftp，请增加该组件
+//    implementation 'com.arialyy.aria:sftpComponent:3.8.12' //# 如果需要使用sftp，请增加该组件
+//    implementation 'com.arialyy.aria:m3u8Component:3.8.12'
+    implementation "androidx.core:core-ktx:1.7.0"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //# 如果需要使用m3u8下载功能，请增加该组件
+    implementation 'com.alibaba:arouter-api:1.5.2'
+//    ksp 'com.alibaba:arouter-compiler:1.5.2'
+
+    // 图像加载库
+    implementation('io.coil-kt:coil:1.1.1')
+    implementation('io.coil-kt:coil-gif:1.1.1')
+//    implementation('io.coil-kt:coil-svg:1.1.1')
+//    implementation('io.coil-kt:coil-video:1.1.1')
+
+    // accompanist
+    implementation('com.google.accompanist:accompanist-systemuicontroller:0.23.1')
+    implementation('com.google.accompanist:accompanist-appcompat-theme:0.23.1')
+    implementation('com.google.accompanist:accompanist-pager:0.23.1')
+//    implementation('com.google.accompanist:accompanist-pager-indicators:0.23.1:')
+    implementation "com.google.accompanist:accompanist-permissions:0.23.1"
+
+    // If you're using Material, use accompanist-placeholder-material
+    implementation "com.google.accompanist:accompanist-placeholder-material:0.23.1"
+
+    // compose
+    implementation('androidx.compose.animation:animation-core:1.1.1')
+    implementation('androidx.compose.animation:animation-graphics:1.1.1')
+    implementation('androidx.compose.animation:animation:1.1.1')
+    implementation('androidx.compose.compiler:compiler:1.1.1')
+    implementation('androidx.compose.foundation:foundation-layout:1.1.1')
+//    implementation('androidx.compose.foundation:foundation-text:1.0.0-alpha07')
+    implementation('androidx.compose.foundation:foundation:1.1.1')
+    implementation('androidx.compose.material:material-icons-core:1.1.1')
+//    implementation('androidx.compose.material3:material3-window-size-class:1.0.0-alpha10')
+//    implementation('androidx.compose.material3:material3:1.0.0-alpha10')
+//    implementation('androidx.compose.material3:material3:1.0.0-alpha10')
+    implementation('androidx.compose.material:material-ripple:1.1.1')
+    implementation('androidx.compose.material:material:1.1.1')
+//    implementation('androidx.compose.runtime:runtime-dispatch:1.0.0-alpha12')
+    implementation('androidx.compose.runtime:runtime-livedata:1.1.1')
+    implementation('androidx.compose.runtime:runtime-rxjava3:1.1.1')
+    implementation('androidx.compose.runtime:runtime-saveable:1.1.1')
+//    implementation('androidx.compose.runtime:runtime-saved-instance-state:1.0.0-alpha11')
+    implementation('androidx.compose.runtime:runtime:1.1.1')
+    implementation('androidx.compose.ui:ui-geometry:1.1.1')
+    implementation('androidx.compose.ui:ui-graphics:1.1.1')
+    implementation('androidx.compose.ui:ui-test-junit4:1.1.1')
+    implementation('androidx.compose.ui:ui-test-manifest:1.1.1')
+    implementation('androidx.compose.ui:ui-test:1.1.1')
+//    implementation('androidx.compose.ui:ui-text-android:1.0.0-alpha06')
+//    implementation('androidx.compose.ui:ui-text-android:1.0.0-alpha06')
+//    implementation('androidx.compose.ui:ui-text-google-fonts:1.2.0-alpha08')
+    implementation('androidx.compose.ui:ui-text:1.1.1')
+    implementation('androidx.compose.ui:ui-tooling-data:1.1.1')
+    implementation('androidx.compose.ui:ui-tooling-preview:1.1.1')
+    implementation('androidx.compose.ui:ui-tooling:1.1.1')
+    implementation('androidx.compose.ui:ui-unit:1.1.1')
+    implementation('androidx.compose.ui:ui-util:1.1.1')
+    implementation('androidx.compose.ui:ui-viewbinding:1.1.1')
+    implementation('androidx.compose.ui:ui:1.1.1')
+//    implementation('androidx.compose:compose-compiler:1.0.0-alpha03')
+
+    // cameraX extensions
+    implementation('androidx.camera:camera-core:1.0.2')
+    implementation('androidx.camera:camera-camera2:1.0.2')
+    implementation('androidx.camera:camera-lifecycle:1.0.2')
+    implementation('androidx.camera:camera-extensions:1.1.0-beta03')
+    implementation('androidx.camera:camera-video:1.1.0-beta03')
+    implementation('androidx.camera:camera-view:1.1.0-beta03')
+
+    // 并发 concurrent
+    implementation('androidx.concurrent:concurrent-futures-ktx:1.1.0')
+    // concurrent-futures-ktx already contains concurrent-futures
+//    implementation('androidx.concurrent:concurrent-futures:1.1.0')
+    implementation('androidx.concurrent:concurrent-listenablefuture-callback:1.0.0-beta01')
+    implementation('androidx.concurrent:concurrent-listenablefuture:1.0.0-beta01')
+//    implementation('androidx.concurrent:futures:1.0.0-alpha01'){
+//        exclude(group:"andoirdx.concurrent",module: "concurrent.futures.DirectExecutor")
+////        exclude('androidx.concurrent.futures.DirectExecutor')
+//    }
+
+    testImplementation('androidx.test.espresso.idling:idling-concurrent:3.4.0')
+
+    // DataStore 基于事务方式处理数据更新，基于kotlin flow 存取数据，再io线程一部操作，读取数据时做了异常处理
+    implementation('androidx.datastore:datastore-core:1.0.0')
+    implementation('androidx.datastore:datastore-preferences-core:1.0.0')
+    implementation('androidx.datastore:datastore-preferences-rxjava3:1.0.0')
+    implementation('androidx.datastore:datastore-preferences:1.0.0')
+    implementation('androidx.datastore:datastore-rxjava3:1.0.0')
+    implementation('androidx.datastore:datastore:1.0.0')
+
+    // Lottie 动画支持，传入Lottie动画的json文件或字符串就可播放动画 // bodymovin
+    implementation('com.airbnb.android:lottie:4.2.2')
+    implementation('com.airbnb.android:lottie-compose:4.2.2')
+
+
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+//    implementation('')
+
+    // Otherwise use the foundation version
+//    implementation "com.google.accompanist:accompanist-placeholder:0.23.1"
+//    implementation "com.google.accompanist:accompanist-flowlayout:0.23.1"
+//    implementation "com.google.accompanist:accompanist-navigation-animation:0.23.1"
+//    implementation "com.google.accompanist:accompanist-navigation-material:0.23.1"
+//    implementation "com.google.accompanist:accompanist-drawablepainter:0.23.1"
+//    implementation "com.google.accompanist:accompanist-swiperefresh:0.23.1"
+//    implementation('com.google.accompanist:accompanist-webview:0.23.1')
+
+    // 一些kotlin扩展方法库
+    implementation 'com.github.DylanCaiCoding.Longan:longan:1.0.5'
+    // Optional
+    implementation 'com.github.DylanCaiCoding.Longan:longan-design:1.0.5'
+    implementation('com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-ktx:2.0.5')
+    implementation('com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-base:2.0.5')
+    implementation('com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-brvah:2.0.5')
+    implementation('com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-nonreflection-ktx:2.0.5')
+}

@@ -1,0 +1,32 @@
+plugins {
+//    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm' version '1.6.20'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+}
+
+dependencies {
+//    implementation 'com.android.tools.build:gradle:7.1.2'
+}
+
+//gradlePlugin {
+//    plugins {
+//        helloPlugin {
+//            id = 'plugin.test2'
+//            implementationClass = 'plugin.CustomPlugin'
+//        }
+//        googbyePlugin{
+//            id = 'com.robothy.goodbye'
+//            implementationClass = 'com.robothy.GoodbyePlugin'
+//        }
+//    }
+//}

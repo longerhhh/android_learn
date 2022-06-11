@@ -1,0 +1,231 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+apply plugin: 'kotlin-android'
+
+//apply plugin: 'plugin.test'
+//apply plugin: 'plugin.test2'
+
+//apply from: "***.gradle"
+//
+//class CustomPlugin1 implements Plugin<Project>{
+//    @Override
+//    void apply(Project project) {
+//        println "in build.gradle custom plugin"
+//    }
+//}
+//
+//apply plugin: CustomPlugin1
+
+Properties extProp = new Properties()
+extProp.load(new FileInputStream(file("../config.properties")))
+
+android {
+    compileSdk 31
+    buildToolsVersion '31.0.0'
+
+    signingConfigs {
+        internal {
+            storeFile file("$rootDir/app/src/internal/keyStore/androiKeyAlias.jks")
+//            storeFile file(rootDir+'/app/src/release/keyStore/androiKeyAlias.jks')
+            keyAlias 'endl'
+            keyPassword 'Sbll99'
+            storePassword 'Sbll99'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+        debug {
+            storeFile file("$rootDir/app/src/debug/keyStore/androiKeyAlias.jks")
+            initWith internal
+//            storePassword 'Sbll99'
+//            keyAlias 'endl'
+//            keyPassword 'Sbll99'
+        }
+
+        release {
+            initWith internal
+            storeFile file("$rootDir/app/src/release/keyStore/androiKeyAlias.jks")
+            storePassword 'Sbll99'
+            keyAlias 'endl'
+            keyPassword 'Sbll99'
+//            storePassword 'Sbll99'
+//            keyAlias 'endl'
+//            keyPassword 'Sbll99'
+//            v1SigningEnable true
+//            v2SigningEnable true
+        }
+        // B 使用 initWith A, A 必须定义在 B 之前
+    }
+    defaultConfig {
+        applicationId 'com.example.test_gradle'
+
+//        versionCode 10001
+//        versionName '1.00.01'
+        versionCode extProp.VERSION_CODE as int
+        versionName extProp.VERSION_NAME
+
+        minSdk 26
+        targetSdk 31
+
+        multiDexEnabled true
+        testFunctionalTest true
+        testHandleProfiling true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            zipAlignEnabled true
+            debuggable true
+
+            minifyEnabled false // 是否混淆
+            shrinkResources false // 是否去除无效的资源文件
+            signingConfig signingConfigs.debug
+
+            applicationIdSuffix '.debug'
+            versionNameSuffix '.debug'+getAssembleTime()
+            manifestPlaceholders['APP_NAME'] = "开发gradle"
+        }
+
+        internal {
+            initWith debug
+            signingConfig signingConfigs.internal
+            applicationIdSuffix '.internal'
+            versionNameSuffix '.internal'
+            manifestPlaceholders['APP_NAME'] = "内部gradle"
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            manifestPlaceholders['APP_NAME'] = "正式gradle"
+        }
+    }
+
+    flavorDimensions 'price', 'country'
+    productFlavors {
+        free {
+            dimension 'price'
+        }
+        paid {
+            dimension 'price'
+        }
+
+        china {
+            dimension 'country'
+        }
+        global {
+            dimension 'country'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dependenciesInfo {
+        includeInApk false
+        includeInBundle false
+    }
+}
+
+static def getAssembleTime() {
+    return new Date().format("yyyyMMdd-HHmm", TimeZone.getTimeZone("GMT+08:00"))
+}
+
+task bumpVersion {
+    doLast{
+        println "-----------------start bump version --------------------------"
+        def propFile = file("../config.properties")
+        def bumpVersionCode = (extProp.VERSION_CODE.toInteger() + 1).toString()
+        extProp["VERSION_CODE"] = bumpVersionCode
+        extProp['VERSION_NAME'] = bumpVersionCode[0]+'.'+bumpVersionCode[1]+bumpVersionCode[2]+"."+bumpVersionCode.substring(3)
+//        new BufferedWriter(new OutputStreamWriter(new FileOutputStream(propFile))).
+        extProp.store(new FileOutputStream(propFile), null)
+    }
+}
+
+task commitWithNewVersion(dependsOn: bumpVersion, type: Exec) {
+    doLast {
+        println "-----------------start commit---------------------"
+        commandLine 'cmd', '/c',  "java -version"
+        println "commit version"
+    }
+}
+
+task javaVersion(type: Exec) {
+//    commandLine 'cmd', '/c', "java -version"
+    doFirst{
+//        commandLine 'cmd', '/c', "java -version"
+        if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+            println "start cmd"
+            commandLine 'cmd', '/c', "java -version"
+        } else {
+            println "start sh"
+            commandLine 'sh', '-c', 'java -version'
+        }
+    }
+}
+
+beforeEvaluate {
+    println '配置阶段开始前的监听回调'
+}
+
+afterEvaluate {
+    println '配置阶段完成以后的回调'
+}
+
+gradle.addBuildListener(new BuildListener() {
+    @Override
+    void settingsEvaluated(Settings settings) {
+        println "settingsEvaluated"
+    }
+
+    @Override
+    void projectsLoaded(Gradle gradle) {
+        println "projectsLoaded"
+    }
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {
+        println "projectsLoaded"
+    }
+
+    @Override
+    void buildFinished(BuildResult buildResult) {
+        println "buildFinished"
+    }
+})
+
+gradle.buildFinished {
+    println 'build完毕后的回调监听'
+}
+
+gradle.beforeProject {
+    println 'gradle执行前的回调监听'
+}
+
+gradle.afterProject {
+    println 'gradle执行前的回调监听'
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation "androidx.core:core-ktx:1.7.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}

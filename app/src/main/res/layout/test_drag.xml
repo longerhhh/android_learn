@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <GridLayout
+        android:id="@+id/gl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="3">
+        <ImageView
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:contentDescription="red"
+            android:layout_rowWeight="1"
+            android:background="#F44336" />
+
+        <ImageView
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:contentDescription="purple"
+            android:layout_gravity="fill"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:background="#9C27B0" />
+
+        <ImageView
+            android:layout_columnWeight="1"
+            android:contentDescription="blue"
+            android:layout_gravity="fill"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:layout_rowWeight="1"
+            android:background="#2196F3" />
+
+        <ImageView
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:contentDescription="orange"
+            android:layout_rowSpan="1"
+            android:layout_rowWeight="1"
+            android:layout_gravity="fill"
+            android:background="#FF9800" />
+
+        <ImageView
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:layout_rowSpan="1"
+            android:layout_rowWeight="1"
+            android:contentDescription="yellow"
+            android:layout_gravity="fill"
+            android:background="#CDDC39" />
+
+        <ImageView
+            android:layout_columnWeight="1"
+            android:layout_columnSpan="1"
+            android:contentDescription="gray"
+            android:layout_rowSpan="1"
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:background="#009688" />
+
+    </GridLayout>
+
+</LinearLayout>

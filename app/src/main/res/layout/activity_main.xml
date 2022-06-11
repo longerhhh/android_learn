@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.example.myapplication.widget.AnimateFlipView
+        android:id="@+id/afv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Hello World!"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.myapplication.widget.MEditText
+        android:id="@+id/met"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="我是一只小小鸟咿呀咿呀哟"
+        android:textSize="20dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/et"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="我是一只小小鸟咿呀咿呀哟"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/appCompatEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/met" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/appCompatEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="我是一只小小鸟咿呀咿呀哟"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et" />
+
+    <com.example.myapplication.widget.METV
+        android:id="@+id/metv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="大手拉小手"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appCompatEditText" />
+
+    <com.example.myapplication.widget.MJEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/metv" />
+
+    <View
+        android:id="@+id/v"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.example.myapplication.widget.SquareImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_avator"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_avator"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <GridLayout
+        android:id="@+id/GridLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:rowCount="6"
+        android:visibility="gone"
+        android:columnCount="4"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_columnSpan="4"
+            android:text="0"
+            android:textSize="50sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            />
+
+        <Button
+            android:text="回退"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            />
+
+        <Button
+            android:text="清空"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill"
+            />
+
+        <Button
+            android:text="+"
+            />
+
+        <Button
+            android:text="1"
+            />
+        <Button
+            android:text="2"
+            />
+        <Button
+            android:text="3"
+            />
+        <Button
+            android:text="-"
+            />
+        <Button
+            android:text="4"
+            />
+        <Button
+            android:text="5"
+            />
+        <Button
+            android:text="6"
+            />
+        <Button
+            android:text="*"
+            />
+        <Button
+            android:text="7"
+            />
+        <Button
+            android:text="8"
+            />
+        <Button
+            android:text="9"
+            />
+        <Button
+            android:text="/"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:text="."
+            />
+        <Button
+            android:text="0"
+            />
+        <Button
+            android:text="="
+            />
+    </GridLayout>
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:orientation="horizontal"
+        android:rowCount="8"
+        android:visibility="gone"
+>
+
+        <com.example.myapplication.widget.SquareImageView
+            android:scaleType="centerCrop"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+    </GridLayout>
+
+    <com.drake.engine.password.GridPasswordView
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.circularreveal.CircularRevealGridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="3"
+        android:columnCount="3"
+        android:visibility="gone"
+        android:useDefaultMargins="true"
+        android:orientation="vertical">
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+        <com.example.myapplication.widget.SquareImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avator" />
+
+
+    </com.google.android.material.circularreveal.CircularRevealGridLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

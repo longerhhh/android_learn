@@ -1,0 +1,39 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'java-gradle-plugin'
+    id 'groovy'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies{
+    implementation('com.android.tools.build:gradle:7.2.1')
+}
+
+gradlePlugin {
+    plugins{
+//        standaloneGradlePlugins{
+//            // 插件id
+//            id 'com.example.custplug'
+//            // 插件实现类
+//            implementationClass 'com.example.customplugin.CustomPlugin'
+//        }
+    }
+}
+
+//publishing{
+//    publications{
+//        // 配置插件id和版本号
+//        // see also [https://developer.android.google.cn/studio/build/maven-publish-plugin?hl=zh-cn]
+//        maven(MavenPublication){
+//            groupId 'com.example.test'
+//            artifactId 'custom.plugin'
+//            version '1.0.0'
+//            from components.java
+//        }
+//    }
+//}

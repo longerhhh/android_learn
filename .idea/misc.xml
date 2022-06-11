@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android_Project/MyApplication2/app/src/main/res/drawable/side_nav_bar.xml" value="0.1075" />
+        <entry key="..\:/Android_Project/MyApplication2/app/src/main/res/layout/activity_edit_text.xml" value="0.1" />
+        <entry key="..\:/Android_Project/MyApplication2/app/src/main/res/layout/activity_main.xml" value="0.27578215527230593" />
+        <entry key="..\:/Android_Project/MyApplication2/app/src/main/res/layout/content_main.xml" value="0.11301715438950555" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/activity_main1.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/activity_main2.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/app_bar_main.xml" value="0.22146739130434784" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/content_main.xml" value="0.22146739130434784" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_banner.xml" value="0.25364583333333335" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_custom_vp.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_drag.xml" value="0.25364583333333335" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_drag_helper.xml" value="0.25364583333333335" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_gif.xml" value="0.12158054711246201" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_key_guard_security_view_flipper.xml" value="0.1621376811594203" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_svf.xml" value="0.25" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_sw.xml" value="0.25" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_vf.xml" value="0.25364583333333335" />
+        <entry key="..\:/Android_Project/androi_learn/app/src/main/res/layout/test_vp2.xml" value="0.22916666666666666" />
+        <entry key="..\:/Android_Project/androi_learn/composetest/src/main/res/drawable/ic_baseline_account_balance_24.xml" value="0.1" />
+        <entry key="..\:/Android_Project/androi_learn/test/src/main/res/layout/activity_edit_text.xml" value="0.20923913043478262" />
+        <entry key="..\:/Android_Project/androi_learn/test/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+        <entry key="..\:/Android_Project/androi_learn/test/src/main/res/layout/nav_header_main.xml" value="0.20923913043478262" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
