@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../layout/compose-model-1656142695581.xml" value="0.4" />
+        <entry key="../../../../../../layout/compose-model-1656144147494.xml" value="0.264" />
+        <entry key="../../../../../../layout/compose-model-1656144757793.xml" value="0.2814814814814815" />
+        <entry key="../../../../../../layout/compose-model-1656145903013.xml" value="0.2814814814814815" />
+        <entry key="../../../../../../layout/compose-model-1656146037567.xml" value="0.264" />
+        <entry key="../../../../../../layout/compose-model-1656146546403.xml" value="0.3176593521421108" />
+        <entry key="../../../../../../layout/compose-model-1656147059299.xml" value="1.0235690235690236" />
+        <entry key="../../../../../../layout/compose-model-1656147511089.xml" value="0.2814814814814815" />
+        <entry key="../../../../../../layout/compose-model-1656147732846.xml" value="0.2954324586977648" />
+        <entry key="../../../../../../layout/compose-model-1656148397206.xml" value="1.0235690235690236" />
+        <entry key="../../../../../../layout/compose-model-1656149339464.xml" value="0.25084175084175087" />
+        <entry key="../../../../../../layout/compose-model-1656149396962.xml" value="1.0" />
+        <entry key="../../../../../../layout/compose-model-1656160634865.xml" value="1.0235690235690236" />
+        <entry key="../../../../../../layout/compose-model-1656212982036.xml" value="0.2212962962962963" />
+        <entry key="../../../../../../layout/compose-model-1656213296067.xml" value="0.4002677376171352" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_btn_borderless_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_btn_check_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_btn_colored_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_btn_default_mtrl_shape.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_btn_radio_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_cab_background_internal_bg.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_cab_background_top_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_dialog_material_background.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_edit_text_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ic_ab_back_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ic_clear_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ic_go_search_api_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ic_menu_overflow_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ic_search_api_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ic_voice_search_api_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_item_background_holo_dark.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_item_background_holo_light.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_list_divider_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_list_selector_background_transition_holo_light.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_list_selector_holo_dark.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_list_selector_holo_light.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ratingbar_indicator_material.xml" value="0.152" />
+        <entry key="../../../../.gradle/caches/transforms-3/c8d654d56013ba1af22f814e349bc174/transformed/appcompat-1.2.0/res/drawable/abc_ratingbar_material.xml" value="0.152" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
