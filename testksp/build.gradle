@@ -1,6 +1,7 @@
 buildscript {
     ext {
         compose_version = '1.2.0-rc02'
+        accompanist_version = "0.24.13-rc"
     }
     dependencies {
         classpath 'com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:1.6.21-1.0.6'
